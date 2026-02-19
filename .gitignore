@@ -25,3 +25,5 @@ logs/
 *.lock
 gunicorn.ctl
 nohup.out
+dashboard/chat_history.json
+config/account_link.json
