@@ -1,0 +1,27 @@
+[Unit]
+Description=B.A.N.E. Core - Behavioral Automation Network Engine
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=10
+
+[Service]
+Type=simple
+User=son
+Group=son
+
+WorkingDirectory=/home/son/BANE
+
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/son/.Xauthority
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONPATH=/home/son/BANE
+
+ExecStart=/home/son/BANE/.venv/bin/python3 /home/son/BANE/main.py
+
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

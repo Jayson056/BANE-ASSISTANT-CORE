@@ -1,0 +1,36 @@
+# B.A.N.E. — Behavioral Automation Network Engine
+# Python 3.10+ required
+
+# === Core Framework ===
+Flask==3.1.2                    # Messenger webhook server
+gunicorn==25.1.0                # Production WSGI server for Messenger gateway
+python-telegram-bot==22.6       # Telegram bot framework
+python-dotenv==1.2.1            # Environment variable loading from .env files
+APScheduler==3.11.2             # Background job scheduling (reminders, security monitor)
+
+# === AI & Automation ===
+PyAutoGUI==0.9.54               # GUI automation (click, type, screenshot)
+pytesseract==0.3.13             # OCR text recognition (Tesseract wrapper)
+opencv-python==4.13.0.92        # Image processing for OCR optimization
+numpy==2.4.2                    # Numerical operations (image arrays)
+pillow==12.1.1                  # Image handling
+
+# === Security & Encryption ===
+cryptography==46.0.5            # AES-256 encryption for Shadow Protocol
+
+# === Voice & Media ===
+gTTS==2.5.4                     # Google Text-to-Speech
+pydub==0.25.1                   # Audio processing/conversion
+
+# === Network & HTTP ===
+requests==2.32.5                # HTTP requests (Messenger API, file downloads)
+httpx==0.28.1                   # Async HTTP (used by python-telegram-bot)
+
+# === System Monitoring ===
+psutil==7.2.2                   # System resource monitoring (CPU, memory, processes)
+watchdog==6.0.0                 # File system event monitoring
+
+# === Optional (install for full feature set) ===
+# SpeechRecognition             # Voice message transcription (speech-to-text)
+# reportlab                     # PDF generation
+# google-generativeai           # Gemini AI direct API access

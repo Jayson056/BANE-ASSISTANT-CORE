@@ -1,0 +1,18 @@
+[Unit]
+Description=BANE Messenger Health Monitor
+After=bane-messenger.service
+Requires=bane-messenger.service
+
+[Service]
+Type=simple
+User=son
+WorkingDirectory=/home/son/BANE
+ExecStart=/home/son/BANE/.venv/bin/python3 /home/son/BANE/deployment/messenger_health.py
+
+Restart=always
+RestartSec=10
+
+Environment="PYTHONUNBUFFERED=1"
+
+[Install]
+WantedBy=multi-user.target

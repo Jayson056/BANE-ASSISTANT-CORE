@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="BANE Dashboard - A personal productivity hub accessible on your local network">
+    <title>BANE Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+    </div>
+
+    <!-- Main App Container -->
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="header" id="app-header">
+            <div class="header-left">
+                <div class="logo-area">
+                    <div class="logo-icon" id="logo-icon">⚡</div>
+                    <div class="logo-text">
+                        <h1>BANE</h1>
+                        <span class="subtitle">Dashboard</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-center">
+                <nav class="nav-tabs" id="nav-tabs">
+                    <button class="nav-tab active" data-tab="home" id="tab-home">
+                        <span class="tab-icon">🏠</span> Home
+                    </button>
+                    <button class="nav-tab" data-tab="tools" id="tab-tools">
+                        <span class="tab-icon">🛠️</span> Tools
+                    </button>
+                    <button class="nav-tab" data-tab="notes" id="tab-notes">
+                        <span class="tab-icon">📝</span> Notes
+                    </button>
+                    <button class="nav-tab" data-tab="monitor" id="tab-monitor">
+                        <span class="tab-icon">📊</span> Monitor
+                    </button>
+                    <button class="nav-tab" data-tab="sandbox" id="tab-sandbox">
+                        <span class="tab-icon">🛡️</span> Sandbox
+                    </button>
+                    <button class="nav-tab" data-tab="schedule" id="tab-schedule">
+                        <span class="tab-icon">📅</span> Schedule
+                    </button>
+                    <button class="nav-tab" data-tab="stories" id="tab-stories">
+                        <span class="tab-icon">📖</span> Stories
+                    </button>
+                    <button class="nav-tab" data-tab="files" id="tab-files">
+                        <span class="tab-icon">📂</span> Files
+                    </button>
+                    <button class="nav-tab" data-tab="connect" id="tab-connect">
+                        <span class="tab-icon">🔗</span> Connect
+                    </button>
+                </nav>
+            </div>
+            <div class="header-right">
+                <div class="status-badge" id="status-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Online</span>
+                </div>
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">🌙</button>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <main class="content" id="content-area">
+
+            <!-- HOME TAB -->
+            <section class="tab-content active" id="panel-home">
+
+                <!-- Time & Greeting Row -->
+                <div class="top-row">
+                    <div class="card glass hero-card" id="greeting-card">
+                        <div class="greeting-content">
+                            <p class="greeting-text" id="greeting-text">Good Evening</p>
+                            <h2 class="time-display" id="time-display">00:00:00</h2>
+                            <p class="date-display" id="date-display">Loading...</p>
+                            <p class="welcome-msg" id="welcome-msg">this is your BANE dashboard in local</p>
+
+                        </div>
+                        <div class="hero-decoration">
+                            <div class="deco-circle deco-1"></div>
+                            <div class="deco-circle deco-2"></div>
+                            <div class="deco-circle deco-3"></div>
+                        </div>
+                    </div>
+
+                    <div class="card glass weather-card" id="weather-card">
+                        <div class="weather-icon" id="weather-icon">🌤️</div>
+                        <div class="weather-info">
+                            <h3 class="weather-temp" id="weather-temp">--°C</h3>
+                            <p class="weather-desc" id="weather-desc">Loading weather...</p>
+                            <p class="weather-location" id="weather-location">📍 Detecting...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Row -->
+                <div class="stats-row">
+                    <div class="card glass stat-card" id="stat-uptime">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="uptime-value">0h 0m</span>
+                            <span class="stat-label">Session Time</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill" id="uptime-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="card glass stat-card" id="stat-tasks">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="tasks-value">0</span>
+                            <span class="stat-label">Tasks Done</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill accent-green" id="tasks-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="card glass stat-card" id="stat-focus">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="focus-value">Ready</span>
+                            <span class="stat-label">Focus Mode</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill accent-purple" id="focus-bar" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="card glass stat-card" id="stat-network">
+                        <div class="stat-icon">🌐</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="network-value">LAN</span>
+                            <span class="stat-label">Network</span>
+                        </div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill accent-cyan" id="network-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links & Pomodoro -->
+                <div class="bottom-row">
+                    <div class="card glass links-card" id="links-card">
+                        <h3 class="card-title">⚡ Quick Links</h3>
+                        <div class="links-grid" id="links-grid">
+                            <a href="https://github.com" target="_blank" class="link-item" id="link-github">
+                                <span class="link-emoji">🐙</span>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://chat.openai.com" target="_blank" class="link-item" id="link-chatgpt">
+                                <span class="link-emoji">🤖</span>
+                                <span>ChatGPT</span>
+                            </a>
+                            <a href="https://youtube.com" target="_blank" class="link-item" id="link-youtube">
+                                <span class="link-emoji">🎬</span>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="https://stackoverflow.com" target="_blank" class="link-item"
+                                id="link-stackoverflow">
+                                <span class="link-emoji">📚</span>
+                                <span>Stack Overflow</span>
+                            </a>
+                            <a href="https://docs.python.org" target="_blank" class="link-item" id="link-python">
+                                <span class="link-emoji">🐍</span>
+                                <span>Python Docs</span>
+                            </a>
+                            <a href="https://developer.mozilla.org" target="_blank" class="link-item" id="link-mdn">
+                                <span class="link-emoji">🌐</span>
+                                <span>MDN Web</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card glass pomodoro-card" id="pomodoro-card">
+                        <h3 class="card-title">🍅 Focus Timer</h3>
+                        <div class="pomodoro-display">
+                            <svg class="pomodoro-ring" viewBox="0 0 200 200">
+                                <circle class="ring-bg" cx="100" cy="100" r="88" />
+                                <circle class="ring-fill" cx="100" cy="100" r="88" id="pomodoro-ring-fill" />
+                            </svg>
+                            <div class="pomodoro-time" id="pomodoro-time">25:00</div>
+                        </div>
+                        <div class="pomodoro-controls">
+                            <button class="pomo-btn" id="pomo-start" title="Start">▶️</button>
+                            <button class="pomo-btn" id="pomo-pause" title="Pause">⏸️</button>
+                            <button class="pomo-btn" id="pomo-reset" title="Reset">🔄</button>
+                        </div>
+                        <div class="pomo-presets">
+                            <button class="preset-btn active" data-minutes="25" id="preset-25">25m</button>
+                            <button class="preset-btn" data-minutes="15" id="preset-15">15m</button>
+                            <button class="preset-btn" data-minutes="5" id="preset-5">5m</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TOOLS TAB -->
+            <section class="tab-content" id="panel-tools">
+                <div class="tools-grid">
+                    <div class="card glass tool-card" id="tool-calculator">
+                        <h3 class="card-title">🧮 Calculator</h3>
+                        <div class="calc-display">
+                            <input type="text" class="calc-input" id="calc-input" placeholder="0" readonly>
+                        </div>
+                        <div class="calc-grid" id="calc-grid">
+                            <button class="calc-btn op" data-val="C">C</button>
+                            <button class="calc-btn op" data-val="±">±</button>
+                            <button class="calc-btn op" data-val="%">%</button>
+                            <button class="calc-btn op accent" data-val="/">÷</button>
+                            <button class="calc-btn" data-val="7">7</button>
+                            <button class="calc-btn" data-val="8">8</button>
+                            <button class="calc-btn" data-val="9">9</button>
+                            <button class="calc-btn op accent" data-val="*">×</button>
+                            <button class="calc-btn" data-val="4">4</button>
+                            <button class="calc-btn" data-val="5">5</button>
+                            <button class="calc-btn" data-val="6">6</button>
+                            <button class="calc-btn op accent" data-val="-">−</button>
+                            <button class="calc-btn" data-val="1">1</button>
+                            <button class="calc-btn" data-val="2">2</button>
+                            <button class="calc-btn" data-val="3">3</button>
+                            <button class="calc-btn op accent" data-val="+">+</button>
+                            <button class="calc-btn wide" data-val="0">0</button>
+                            <button class="calc-btn" data-val=".">.</button>
+                            <button class="calc-btn op accent" data-val="=">=</button>
+                        </div>
+                    </div>
+
+                    <div class="card glass tool-card" id="tool-converter">
+                        <h3 class="card-title">🔄 Unit Converter</h3>
+                        <div class="converter-form">
+                            <select class="convert-select" id="convert-type">
+                                <option value="length">Length</option>
+                                <option value="weight">Weight</option>
+                                <option value="temp">Temperature</option>
+                            </select>
+                            <div class="convert-row">
+                                <input type="number" class="convert-input" id="convert-from" placeholder="Enter value">
+                                <select class="convert-select small" id="convert-from-unit">
+                                    <option value="m">Meters</option>
+                                    <option value="km">Kilometers</option>
+                                    <option value="ft">Feet</option>
+                                    <option value="mi">Miles</option>
+                                </select>
+                            </div>
+                            <div class="convert-arrow">⬇️</div>
+                            <div class="convert-row">
+                                <input type="text" class="convert-input" id="convert-to" placeholder="Result" readonly>
+                                <select class="convert-select small" id="convert-to-unit">
+                                    <option value="km">Kilometers</option>
+                                    <option value="m">Meters</option>
+                                    <option value="ft">Feet</option>
+                                    <option value="mi">Miles</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card glass tool-card color-picker-tool" id="tool-color">
+                        <h3 class="card-title">🎨 Color Picker</h3>
+                        <div class="color-picker-area">
+                            <input type="color" class="color-input" id="color-input" value="#6c5ce7">
+                            <div class="color-preview" id="color-preview" style="background: #6c5ce7"></div>
+                            <div class="color-values">
+                                <span class="color-hex" id="color-hex">#6c5ce7</span>
+                                <span class="color-rgb" id="color-rgb">rgb(108, 92, 231)</span>
+                            </div>
+                            <button class="copy-color-btn" id="copy-color" title="Copy HEX">📋 Copy</button>
+                        </div>
+                    </div>
+
+                    <div class="card glass tool-card" id="tool-password">
+                        <h3 class="card-title">🔐 Password Generator</h3>
+                        <div class="password-area">
+                            <div class="password-display" id="password-display">Click Generate</div>
+                            <div class="password-options">
+                                <label class="pw-option">
+                                    <input type="range" min="8" max="64" value="16" id="pw-length">
+                                    <span id="pw-length-label">16 chars</span>
+                                </label>
+                                <label class="pw-checkbox"><input type="checkbox" id="pw-upper" checked> A-Z</label>
+                                <label class="pw-checkbox"><input type="checkbox" id="pw-lower" checked> a-z</label>
+                                <label class="pw-checkbox"><input type="checkbox" id="pw-digits" checked> 0-9</label>
+                                <label class="pw-checkbox"><input type="checkbox" id="pw-symbols" checked> !@#</label>
+                            </div>
+                            <div class="password-actions">
+                                <button class="pomo-btn" id="pw-generate">🎲 Generate</button>
+                                <button class="pomo-btn" id="pw-copy">📋 Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NOTES TAB -->
+            <section class="tab-content" id="panel-notes">
+                <div class="notes-layout">
+                    <div class="card glass notes-sidebar" id="notes-sidebar">
+                        <div class="notes-header">
+                            <h3 class="card-title">📒 My Notes</h3>
+                            <button class="add-note-btn" id="add-note-btn">+ New</button>
+                        </div>
+                        <div class="notes-list" id="notes-list"></div>
+                    </div>
+                    <div class="card glass notes-editor" id="notes-editor">
+                        <input type="text" class="note-title-input" id="note-title" placeholder="Note title...">
+                        <textarea class="note-body-input" id="note-body"
+                            placeholder="Start writing your thoughts..."></textarea>
+                        <div class="note-footer">
+                            <span class="note-char-count" id="note-char-count">0 characters</span>
+                            <button class="save-note-btn" id="save-note-btn">💾 Save</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MONITOR TAB -->
+            <section class="tab-content" id="panel-monitor">
+                <div class="monitor-grid">
+                    <!-- System Health Card -->
+                    <div class="card glass monitor-card" id="monitor-health">
+                        <h3 class="card-title">🖥️ System Health</h3>
+                        <div class="health-stats">
+                            <div class="health-item">
+                                <div class="health-label">CPU Usage</div>
+                                <div class="health-bar-container">
+                                    <div class="health-bar" id="cpu-bar" style="width: 0%"></div>
+                                </div>
+                                <div class="health-value" id="cpu-value">0%</div>
+                            </div>
+                            <div class="health-item">
+                                <div class="health-label">RAM Usage</div>
+                                <div class="health-bar-container">
+                                    <div class="health-bar" id="ram-bar" style="width: 0%"></div>
+                                </div>
+                                <div class="health-value" id="ram-value">0%</div>
+                            </div>
+                            <div class="health-item">
+                                <div class="health-label">Disk Usage</div>
+                                <div class="health-bar-container">
+                                    <div class="health-bar" id="disk-bar" style="width: 0%"></div>
+                                </div>
+                                <div class="health-value" id="disk-value">0%</div>
+                            </div>
+                        </div>
+                        <div class="uptime-badge" id="monitor-uptime">Uptime: Loading...</div>
+                        <div class="load-avg" id="load-avg">Load: ...</div>
+                    </div>
+
+                    <!-- AI Quota Monitor Card -->
+                    <div class="card glass monitor-card" id="monitor-quota">
+                        <h3 class="card-title">📊 AI Model Quota</h3>
+
+                        <!-- Real-time Token Numbers -->
+                        <div class="token-tracker" id="token-metrics"
+                            style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.05);">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 8px;">
+                                <span
+                                    style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px;">Session
+                                    Consumption</span>
+                                <span id="token-session-total"
+                                    style="font-size: 1.4rem; font-weight: 700; color: var(--accent-primary); font-family: 'JetBrains Mono', monospace;">0</span>
+                            </div>
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem;">
+                                <span id="token-last-delta" style="color: var(--accent-green);">+0 tokens last
+                                    msg</span>
+                                <span id="token-status-dot"
+                                    style="display: flex; align-items: center; color: var(--text-muted);">
+                                    <span class="pulse-dot"
+                                        style="width: 6px; height: 6px; margin-right: 5px; background: #4caf50;"></span>
+                                    Live Log Tracking
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="quota-list" id="quota-list">
+                            <div class="loading-spinner">Detecting quota...</div>
+                        </div>
+                        <div id="quota-notes"
+                            style="font-size: 0.75rem; color: var(--text-muted); margin-top: 10px; font-style: italic;">
+                        </div>
+                    </div>
+
+                    <!-- BANE Status Card -->
+                    <div class="card glass monitor-card" id="monitor-processes">
+                        <h3 class="card-title">🤖 BANE Services</h3>
+                        <div class="process-list" id="process-list">
+                            <div class="loading-spinner">Checking services...</div>
+                        </div>
+                        <div class="telegram-status" id="telegram-status">
+                            <span class="tg-icon">📡</span>
+                            <span class="tg-label">Telegram Bot:</span>
+                            <span class="tg-value" id="tg-status-value">Checking...</span>
+                        </div>
+                    </div>
+
+                    <!-- Network Monitor Card -->
+                    <div class="card glass monitor-card" id="monitor-network">
+                        <h3 class="card-title">🌐 Network Monitor</h3>
+
+                        <!-- Internet Status -->
+                        <div class="net-connectivity" id="net-connectivity">
+                            <span class="net-status-dot offline"></span>
+                            <span class="net-status-label">Checking connectivity...</span>
+                        </div>
+
+                        <!-- Speed Gauges -->
+                        <div class="net-speed-row">
+                            <div class="net-speed-gauge">
+                                <div class="net-speed-icon">⬇️</div>
+                                <div class="net-speed-value" id="net-dl-speed">0</div>
+                                <div class="net-speed-unit">kbps</div>
+                                <div class="net-speed-label">Download</div>
+                            </div>
+                            <div class="net-speed-gauge">
+                                <div class="net-speed-icon">⬆️</div>
+                                <div class="net-speed-value" id="net-ul-speed">0</div>
+                                <div class="net-speed-unit">kbps</div>
+                                <div class="net-speed-label">Upload</div>
+                            </div>
+                            <div class="net-speed-gauge">
+                                <div class="net-speed-icon">📶</div>
+                                <div class="net-speed-value" id="net-latency">—</div>
+                                <div class="net-speed-unit">ms</div>
+                                <div class="net-speed-label">Latency</div>
+                            </div>
+                        </div>
+
+                        <!-- WiFi Info -->
+                        <div class="net-wifi-info" id="net-wifi-info">
+                            <div class="net-wifi-header">
+                                <span class="net-wifi-icon">📡</span>
+                                <span class="net-wifi-ssid" id="net-wifi-ssid">Scanning...</span>
+                                <span class="net-wifi-band" id="net-wifi-band"></span>
+                            </div>
+                            <div class="net-wifi-details">
+                                <div class="net-wifi-stat">
+                                    <span class="net-detail-label">Signal</span>
+                                    <span class="net-detail-value" id="net-wifi-signal">—</span>
+                                </div>
+                                <div class="net-wifi-stat">
+                                    <span class="net-detail-label">Quality</span>
+                                    <span class="net-detail-value" id="net-wifi-quality">—</span>
+                                </div>
+                                <div class="net-wifi-stat">
+                                    <span class="net-detail-label">Bitrate</span>
+                                    <span class="net-detail-value" id="net-wifi-bitrate">—</span>
+                                </div>
+                                <div class="net-wifi-stat">
+                                    <span class="net-detail-label">Frequency</span>
+                                    <span class="net-detail-value" id="net-wifi-freq">—</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Signal Strength Bar -->
+                        <div class="net-signal-bar-container">
+                            <div class="net-signal-label">Signal Strength</div>
+                            <div class="health-bar-container">
+                                <div class="health-bar" id="net-signal-bar" style="width: 0%"></div>
+                            </div>
+                            <div class="net-signal-value" id="net-signal-pct">0%</div>
+                        </div>
+
+                        <!-- Interfaces List -->
+                        <div class="net-interfaces" id="net-interfaces">
+                            <div class="net-iface-header">Network Interfaces</div>
+                            <div class="loading-spinner">Scanning interfaces...</div>
+                        </div>
+
+                        <!-- Connection Count -->
+                        <div class="net-connections-badge" id="net-connections">
+                            🔗 Active connections: ...
+                        </div>
+                    </div>
+
+                    <!-- Security Monitor Card -->
+                    <div class="card glass monitor-card" id="monitor-security">
+                        <div class="card-header-flex">
+                            <h3 class="card-title">🛡️ Security Scan</h3>
+                            <button class="pomo-btn" id="run-security-scan"
+                                style="padding: 2px 8px; font-size: 0.7rem;">🔍 Scan</button>
+                        </div>
+
+                        <div class="security-status-hero" id="sec-status-hero">
+                            <div class="sec-score" id="sec-score">--</div>
+                            <div class="sec-label" id="sec-status-label">Checking security...</div>
+                        </div>
+
+                        <div class="security-stats">
+                            <div class="sec-stat">
+                                <span class="sec-stat-icon">🔓</span>
+                                <span class="sec-stat-value" id="sec-open-ports">0</span>
+                                <span class="sec-stat-label">Open Ports</span>
+                            </div>
+                            <div class="sec-stat">
+                                <span class="sec-stat-icon">⚠️</span>
+                                <span class="sec-stat-value" id="sec-vulns">0</span>
+                                <span class="sec-stat-label">Vulnerabilities</span>
+                            </div>
+                        </div>
+
+                        <div class="security-issues-list" id="security-issues-list">
+                            <div class="loading-spinner">Analyzing system...</div>
+                        </div>
+
+                        <div class="last-scan-time" id="last-scan-time">Last scan: Never</div>
+                    </div>
+
+                    <!-- Workspace Explorer -->
+                    <div class="card glass monitor-card full-width" id="monitor-workspaces">
+                        <h3 class="card-title">📁 Workspace Projects</h3>
+                        <div class="workspace-grid" id="workspace-grid">
+                            <div class="loading-spinner">Scanning workspaces...</div>
+                        </div>
+                    </div>
+
+                    <!-- AI Skills Card -->
+                    <div class="card glass monitor-card full-width" id="monitor-skills">
+                        <h3 class="card-title">🧠 AI Skills</h3>
+                        <div class="skills-list" id="skills-list">
+                            <div class="loading-spinner">Loading skills...</div>
+                        </div>
+                    </div>
+
+                    <!-- AI Analytics Card -->
+                    <div class="card glass monitor-card full-width" id="monitor-analytics">
+                        <div class="card-header-flex">
+                            <h3 class="card-title">📈 AI Persona Analytics</h3>
+                            <div class="sec-label" id="analytics-timestamp" style="font-size: 0.7rem;">Last updated: --
+                            </div>
+                        </div>
+                        <div class="analytics-grid" id="analytics-display">
+                            <div class="loading-spinner">Gathering insights...</div>
+                        </div>
+                    </div>
+
+                    <!-- Core Maintenance Health Card -->
+                    <div class="card glass monitor-card full-width" id="monitor-maintenance">
+                        <div class="card-header-flex">
+                            <h3 class="card-title">🚨 Maintenance Alert Log</h3>
+                            <button class="pomo-btn" id="refresh-maintenance"
+                                style="padding: 2px 8px; font-size: 0.7rem;">Check Status</button>
+                        </div>
+                        <div class="security-status-hero" id="maint-hero"
+                            style="display:none; background: rgba(239, 68, 68, 0.1);">
+                            <div class="sec-score" id="maint-count" style="color:var(--accent-red); font-size: 2rem;">0
+                            </div>
+                            <div class="sec-label">Active Core Issues</div>
+                        </div>
+                        <div id="maintenance-list" class="security-issues-list" style="margin-top: 10px;">
+                            <div class="loading-spinner">Verifying core integrity...</div>
+                        </div>
+                    </div>
+
+                    <div class="card glass monitor-card full-width" id="monitor-logs">
+                        <div class="card-header-flex">
+                            <h3 class="card-title">📜 Core Logs</h3>
+                            <span class="log-filename" id="log-filename">No file loaded</span>
+                        </div>
+                        <div class="log-viewer-wrapper" style="position: relative;">
+                            <div class="log-container" id="log-display">
+                                <div class="log-line">Waiting for data...</div>
+                            </div>
+                            <!-- Authentication Overlay -->
+                            <div id="log-auth-overlay"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 100; backdrop-filter: blur(12px); background: rgba(0,0,0,0.6); border-radius: var(--radius-sm); display: none;">
+                                <div style="font-size: 2rem; margin-bottom: 15px;">🔒</div>
+                                <h4 style="margin-bottom: 20px; color: white;">Maintenance Authentication Required</h4>
+                                <div style="display: flex; gap: 10px;">
+                                    <input type="password" id="maint-pwd-input" placeholder="Enter Password"
+                                        style="padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: white; outline: none; width: 200px;">
+                                    <button class="pomo-btn" id="maint-pwd-submit"
+                                        style="background: var(--accent-gradient); border: none; padding: 10px 20px; border-radius: 8px; color: white; cursor: pointer; font-weight: 600;">Unlock
+                                        Logs</button>
+                                </div>
+                                <p id="maint-pwd-error"
+                                    style="color: #ff4d4d; margin-top: 10px; font-size: 0.85rem; font-weight: 500;"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backup Explorer -->
+                    <div class="card glass monitor-card full-width" id="monitor-backups">
+                        <h3 class="card-title">📦 Snapshot Backups</h3>
+                        <div class="backup-table-container">
+                            <table class="backup-table">
+                                <thead>
+                                    <tr>
+                                        <th>Filename</th>
+                                        <th>Size</th>
+                                        <th>Date Created</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="backup-list">
+                                    <tr>
+                                        <td colspan="4">Scanning for snapshots...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SANDBOX TAB -->
+            <section class="tab-content" id="panel-sandbox">
+                <div class="monitor-grid">
+                    <div class="card glass monitor-card full-width">
+                        <div class="card-header-flex">
+                            <h3 class="card-title">🛡️ AI Skills Sandbox</h3>
+                            <div class="header-actions">
+                                <button class="pomo-btn" id="sandbox-refresh">🔄 Refresh</button>
+                                <button class="pomo-btn accent-green" id="sandbox-new-file">+ New Payload</button>
+                            </div>
+                        </div>
+                        <p class="control-hint" style="margin-bottom: 20px;">Hardened environment for experimental
+                            payloads using Bubblewrap.</p>
+
+                        <div class="sandbox-layout">
+                            <div class="sandbox-sidebar">
+                                <h4
+                                    style="margin-bottom: 10px; font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">
+                                    📁 Sandbox Files</h4>
+                                <div class="sandbox-file-list" id="sandbox-file-list">
+                                    <div class="loading-spinner">Loading files...</div>
+                                </div>
+                            </div>
+                            <div class="sandbox-main">
+                                <div class="sandbox-editor-header"
+                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                    <span id="sandbox-current-filename"
+                                        style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; font-weight: 600;">No
+                                        file selected</span>
+                                    <div class="editor-actions" style="display: flex; gap: 8px;">
+                                        <button class="pomo-btn" id="sandbox-save-file"
+                                            style="padding: 4px 12px; font-size: 0.8rem;" disabled>💾 Save</button>
+                                        <button class="pomo-btn accent-red" id="sandbox-run-script"
+                                            style="padding: 4px 12px; font-size: 0.8rem;" disabled>🚀 Run</button>
+                                    </div>
+                                </div>
+                                <textarea id="sandbox-editor" class="sandbox-editor"
+                                    style="width: 100%; height: 300px; background: rgba(0,0,0,0.3); border: 1px solid var(--glass-border); border-radius: 8px; color: #a8a8c0; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; padding: 15px; resize: none; outline: none; margin-bottom: 20px;"
+                                    placeholder="Select a file to edit or create a new one..."
+                                    spellcheck="false"></textarea>
+
+                                <div class="sandbox-output-header"
+                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                    <h4 style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">
+                                        🖥️ Execution Output</h4>
+                                    <button class="pomo-btn" id="sandbox-clear-output"
+                                        style="padding: 2px 8px; font-size: 0.7rem;">Clear</button>
+                                </div>
+                                <div class="sandbox-output" id="sandbox-output"
+                                    style="width: 100%; height: 200px; background: #000; border: 1px solid var(--glass-border); border-radius: 8px; padding: 15px; overflow-y: auto; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; line-height: 1.4; color: #a8a8c0;">
+                                    <span class="text-muted">Output will appear here after running a script...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STORIES TAB -->
+            <section class="tab-content" id="panel-stories">
+                <div class="card glass full-width" style="padding: 24px;">
+                    <h3 class="card-title">📖 Creative Writing Library</h3>
+                    <div style="display: grid; grid-template-columns: 300px 1fr; gap: 20px; height: 600px;">
+                        <!-- Story List -->
+                        <div
+                            style="background: rgba(255,255,255,0.05); border-radius: var(--radius-sm); padding: 10px; overflow-y: auto;">
+                            <h4
+                                style="margin-bottom: 10px; color: var(--text-secondary); font-size: 0.8rem; text-transform: uppercase;">
+                                Your Stories</h4>
+                            <div id="story-list" style="display: flex; flex-direction: column; gap: 8px;">
+                                <div class="loading-spinner">Loading library...</div>
+                            </div>
+                        </div>
+
+                        <!-- Reader & Player -->
+                        <div style="display: flex; flex-direction: column; height: 100%;">
+                            <div id="story-player-controls"
+                                style="margin-bottom: 15px; display: none; align-items: center; gap: 15px; background: rgba(0,0,0,0.2); padding: 10px; border-radius: var(--radius-sm);">
+                                <button id="btn-speak-story" class="pomo-btn"
+                                    style="background: var(--accent-primary);">▶️ Read Aloud</button>
+                                <button id="btn-stop-story" class="pomo-btn">⏹️ Stop</button>
+                                <span id="story-status" style="font-size: 0.8rem; color: var(--text-muted);">Ready to
+                                    read</span>
+                            </div>
+                            <div id="story-content-view"
+                                style="flex: 1; background: rgba(255,255,255,0.9); color: #1a1a2e; padding: 30px; border-radius: var(--radius-sm); overflow-y: auto; font-family: 'Merriweather', serif; line-height: 1.8; white-space: pre-wrap;">
+                                <div
+                                    style="display: flex; height: 100%; align-items: center; justify-content: center; color: #888;">
+                                    Select a story to begin reading...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FILES TAB -->
+            <section class="tab-content" id="panel-files">
+                <div class="card glass full-width" style="padding: 24px;">
+                    <h3 class="card-title">📂 Workspace File Manager</h3>
+
+                    <!-- Upload Area -->
+                    <div
+                        style="margin-bottom: 20px; padding: 20px; border: 2px dashed var(--glass-border); border-radius: var(--radius); text-align: center; background: rgba(255,255,255,0.02);">
+                        <div style="margin-bottom: 10px;">Upload to: <b id="current-upload-folder">Select a folder
+                                below</b></div>
+                        <input type="file" id="file-upload-input" style="display: none;">
+                        <button class="pomo-btn" onclick="document.getElementById('file-upload-input').click()">📤
+                            Select File</button>
+                        <span id="upload-status" style="margin-left: 10px; font-size: 0.9rem;"></span>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 250px 1fr; gap: 20px;">
+                        <!-- Folder List -->
+                        <div class="card glass" style="padding: 15px; height: 500px; overflow-y: auto;">
+                            <h4 style="margin-bottom: 10px; font-size: 0.9rem;">My Folders</h4>
+                            <div id="folder-list" style="display: flex; flex-direction: column; gap: 5px;">
+                                <!-- Folders injected here -->
+                            </div>
+                        </div>
+
+                        <!-- File List -->
+                        <div class="card glass" style="padding: 15px; height: 500px; overflow-y: auto;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                                <h4 id="files-header">Files</h4>
+                                <button class="pomo-btn" id="refresh-files"
+                                    style="padding: 2px 8px; font-size: 0.7rem;">🔄 Refresh</button>
+                            </div>
+                            <table class="backup-table" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: left;">Name</th>
+                                        <th>Size</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="file-list-body">
+                                    <tr>
+                                        <td colspan="3"
+                                            style="text-align: center; padding: 20px; color: var(--text-muted);">Select
+                                            a folder to view files</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="tab-content" id="panel-schedule">
+                <div class="card glass full-width" style="padding: 24px;">
+                    <h3 class="card-title">📅 Weekly Class Schedule - Spring 2026</h3>
+                    <div
+                        style="display: flex; justify-content: center; background: rgba(255,255,255,0.9); border-radius: var(--radius); padding: 20px; overflow: auto;">
+                        <img src="school_schedule.png" alt="Class Schedule"
+                            style="max-width: 100%; height: auto; border-radius: var(--radius-sm); box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONNECT TAB (Remote Control & AI Chat) -->
+            <section class="tab-content" id="panel-connect">
+                <div class="connect-layout">
+                    <!-- Remote Desktop View -->
+                    <div class="card glass remote-view-card">
+                        <div class="card-header-flex">
+                            <h3 class="card-title">🖥️ Remote Desktop Viewing</h3>
+                            <div class="status-badge" id="remote-status">
+                                <span class="pulse-dot"></span>
+                                <span>Live</span>
+                            </div>
+                        </div>
+                        <div class="remote-screen-container" id="remote-screen-container">
+                            <div class="screen-wrapper" id="screen-wrapper"
+                                style="position: relative; display: inline-block;">
+                                <img id="remote-screen-img" src="" alt="Remote Screen">
+                                <div id="remote-cursor"
+                                    style="position: absolute; width: 10px; height: 10px; background: var(--accent-red); border: 2px solid white; box-shadow: 0 0 10px rgba(239, 68, 68, 0.8); border-radius: 50%; display: none; pointer-events: none; z-index: 1001; transform: translate(-50%, -50%);">
+                                </div>
+                                <div id="scroll-indicator" class="scroll-indicator"></div>
+                            </div>
+                        </div>
+                        <div class="remote-controls-bar">
+                            <button class="pomo-btn" id="toggle-remote-control">🖱️ Enable Control</button>
+                            <button class="pomo-btn" id="toggle-keyboard">⌨️ Keyboard</button>
+                            <button class="pomo-btn" id="toggle-audio">🔇 Unmute Audio</button>
+                            <button class="pomo-btn" id="toggle-fullscreen">📺 Fullscreen</button>
+                            <input type="text" id="remote-keyboard-input" autocomplete="off" autocorrect="off"
+                                autocapitalize="off" spellcheck="false"
+                                style="opacity:0; position:absolute; width:1px; height:1px; overflow:hidden; z-index:-1;">
+                        </div>
+                    </div>
+
+                    <!-- Floating Fullscreen Controller Overlay -->
+                    <div id="fullscreen-overlay" class="fullscreen-overlay" style="display: none;">
+                        <div class="floating-controls">
+                            <button class="floating-btn" id="fs-close" title="Exit Fullscreen">❌</button>
+                            <button class="floating-btn" id="fs-control" title="Toggle Mouse Control">🖱️</button>
+                            <button class="floating-btn" id="fs-keyboard" title="Toggle Keyboard">⌨️</button>
+                            <button class="floating-btn" id="fs-audio" title="Mute/Unmute">🔇</button>
+                        </div>
+                    </div>
+
+                    <!-- AI Agent Chat -->
+                    <div class="card glass chat-card">
+                        <div class="card-header-flex">
+                            <h3 class="card-title">🤖 AI Agent Chat</h3>
+                        </div>
+                        <div class="chat-messages" id="chat-messages">
+                            <div class="chat-msg ai">
+                                <div class="msg-bubble">Hello! I am your BANE AI agent. How can I help you today?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-input-area">
+                            <input type="text" id="chat-input" placeholder="Ask something...">
+                            <button class="pomo-btn" id="chat-send">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mobile Mouse Action Overlay (touch-friendly remote controls) -->
+            <div id="mouse-action-overlay" class="mouse-action-overlay">
+                <button class="mouse-action-btn" id="mob-left-click" title="Left Click">
+                    👆
+                </button>
+                <button class="mouse-action-btn" id="mob-right-click" title="Right Click">
+                    👇
+                </button>
+                <div class="mouse-action-divider"></div>
+                <button class="mouse-action-btn" id="mob-scroll-up" title="Scroll Up">
+                    ⬆️
+                </button>
+                <button class="mouse-action-btn" id="mob-scroll-down" title="Scroll Down">
+                    ⬇️
+                </button>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" id="app-footer">
+            <span>⚡ BANE Dashboard v2.0</span>
+            <span class="footer-divider">|</span>
+            <span id="footer-ip">LAN: Loading...</span>
+            <span class="footer-divider">|</span>
+            <span id="footer-time-running">Running for 0s</span>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

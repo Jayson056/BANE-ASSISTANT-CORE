@@ -1,0 +1,3 @@
+/home/son/BANE/dashboard/monitor_server.py:13: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+  import cgi
+⚡ BANE Hardened Multi-threaded Monitor Server active on port 8081

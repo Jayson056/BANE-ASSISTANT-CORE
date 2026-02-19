@@ -1,0 +1,43 @@
+[Unit]
+Description=BANE Messenger Gateway (Gunicorn)
+After=network-online.target bane.service
+Wants=network-online.target
+Requires=bane.service
+
+[Service]
+Type=notify
+User=son
+WorkingDirectory=/home/son/BANE
+ExecStart=/home/son/BANE/.venv/bin/gunicorn \
+    --bind 0.0.0.0:8082 \
+    --workers 2 \
+    --threads 4 \
+    --timeout 120 \
+    --graceful-timeout 30 \
+    --access-logfile /home/son/BANE/Debug/Console/messenger_access.log \
+    --error-logfile /home/son/BANE/Debug/Console/messenger_error.log \
+    --pid /tmp/bane_messenger.pid \
+    --capture-output \
+    messenger_interface.app:app
+ExecReload=/bin/kill -HUP $MAINPID
+
+# Process management
+Restart=always
+RestartSec=5
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+# Environment
+Environment="PYTHONUNBUFFERED=1"
+Environment="PYTHONPATH=/home/son/BANE"
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/home/son/BANE/storage /home/son/BANE/Debug /home/son/BANE_Workspaces /tmp
+
+# Resource limits
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

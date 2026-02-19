@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANE | System Override</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="noise"></div>
+    
+    <div class="main-wrapper" id="main-wrapper">
+        <header class="hero-section">
+            <div class="logo-container">
+                <h1 class="glitch-logo" data-text="BANE">BANE</h1>
+            </div>
+            <p class="subtitle typing-effect">AUTONOMOUS INTELLIGENCE AGENT</p>
+        </header>
+        
+        <main class="content-grid">
+            <section class="terminal-section">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="buttons">
+                            <span class="btn red"></span>
+                            <span class="btn yellow"></span>
+                            <span class="btn green"></span>
+                        </div>
+                        <span class="title">root@bane-core:~</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="command-line">
+                            <span class="prompt">root@bane:~$</span>
+                            <span class="cmd">whoami</span>
+                        </div>
+                        <div class="output">
+                            <p>BANE (Binary Autonomous Neural Engine)</p>
+                            <p>v2.0.4 - System Active</p>
+                        </div>
+                        <br>
+                        <div class="command-line">
+                            <span class="prompt">root@bane:~$</span>
+                            <span class="cmd">cat features.txt</span>
+                        </div>
+                        <div class="output">
+                            <ul class="feature-list">
+                                <li>[+] Workspace Integration & Productivity</li>
+                                <li>[+] Multi-Channel Uplink (Telegram/Messenger)</li>
+                                <li>[+] Autonomous Code Generation & Refactoring</li>
+                                <li>[+] Real-time System Monitoring</li>
+                                <li>[+] Secure Remote Desktop Access</li>
+                            </ul>
+                        </div>
+                        <br>
+                        <div class="command-line">
+                            <span class="prompt">root@bane:~$</span>
+                            <span class="cursor">_</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <p class="cta-text">Ready to deploy the future?</p>
+                <div class="btn-container">
+                    <button id="initiate-btn" class="cyber-btn">
+                        <span class="btn-content">INITIALIZE PROTOCOL</span>
+                        <span class="btn-glitch"></span>
+                    </button>
+                </div>
+                <div class="repo-link">
+                    <a href="https://github.com/Jayson056/BANE-ASSISTANT-CORE" target="_blank" class="github-link">
+                        Create your own Agent >
+                    </a>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="status-bar">
+                <span>SYSTEM: ONLINE</span>
+                <span>LATENCY: 4ms</span>
+                <span>ENCRYPTION: AES-256</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Hacker Overlay for Transition -->
+    <div id="hacker-overlay" class="hacker-overlay hidden">
+        <canvas id="matrix-canvas"></canvas>
+        <div class="overlay-content">
+            <h1 class="mega-glitch" data-text="BANE IS HERE">BANE IS HERE</h1>
+            <p class="access-granted">ACCESS GRANTED</p>
+            <p class="redirecting">REDIRECTING TO REPOSITORY<span class="dots">...</span></p>
+        </div>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

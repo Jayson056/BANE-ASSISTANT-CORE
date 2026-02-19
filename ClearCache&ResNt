@@ -1,0 +1,10 @@
+sudo service network-manager restart
+
+
+pkill antigravity || pkill Antigravity
+
+rm -rf ~/.antigravity
+rm -rf ~/.config/antigravity
+rm -rf ~/.cache/antigravity
+rm -rf ~/.local/share/antigravity
+rm -rf ~/.gemini/antigravity

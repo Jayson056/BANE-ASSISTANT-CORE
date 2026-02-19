@@ -1,0 +1,27 @@
+# BANE .gitignore
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Sensitive
+config/secrets.env
+shadow_history.enc
+shadow_state.json
+
+# Runtime data
+storage/users/
+storage/screenshots/
+storage/received_files/
+storage/temp_*
+storage/*.wav
+storage/*.mp3
+storage/*.ogg
+Debug/Console/*.log
+Debug/Console/consoleLog-*
+logs/
+
+# System
+*.lock
+gunicorn.ctl
+nohup.out

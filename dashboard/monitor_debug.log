@@ -1,0 +1,25 @@
+nohup: ignoring input
+/home/son/BANE/dashboard/monitor_server.py:13: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+  import cgi
+⚡ BANE Hardened Multi-threaded Monitor Server active on port 8081
+127.0.0.1 - - [18/Feb/2026 07:11:18] "GET /api/remote/screenshot HTTP/1.1" 200 -
+192.168.11.4 - - [18/Feb/2026 07:13:06] "GET /api/logs?pwd= HTTP/1.1" 401 -
+192.168.11.4 - - [18/Feb/2026 07:13:06] "GET /api/chat/history HTTP/1.1" 200 -
+192.168.11.4 - - [18/Feb/2026 07:13:06] "GET /api/backups HTTP/1.1" 200 -
+192.168.11.4 - - [18/Feb/2026 07:13:06] "GET /api/maintenance/issues HTTP/1.1" 200 -
+192.168.11.4 - - [18/Feb/2026 07:13:06] "GET /api/security HTTP/1.1" 200 -
+192.168.11.4 - - [18/Feb/2026 07:13:06] "GET /api/analytics HTTP/1.1" 200 -
+192.168.11.4 - - [18/Feb/2026 07:13:06] "GET /api/status HTTP/1.1" 200 -
+192.168.11.4 - - [18/Feb/2026 07:13:07] "GET /api/network HTTP/1.1" 200 -
+192.168.11.4 - - [18/Feb/2026 07:13:07] "GET / HTTP/1.1" 200 -
+192.168.11.4 - - [18/Feb/2026 07:13:07] "GET /api/workspaces HTTP/1.1" 200 -
+192.168.11.4 - - [18/Feb/2026 07:13:11] "GET /api/telegram HTTP/1.1" 200 -
+192.168.11.4 - - [18/Feb/2026 07:13:12] "GET / HTTP/1.1" 200 -
+192.168.11.4 - - [18/Feb/2026 07:13:12] "GET / HTTP/1.1" 200 -
+192.168.11.4 - - [18/Feb/2026 07:13:13] "GET / HTTP/1.1" 200 -
+192.168.11.4 - - [18/Feb/2026 07:13:13] "GET / HTTP/1.1" 200 -
+192.168.11.4 - - [18/Feb/2026 07:13:13] "GET / HTTP/1.1" 200 -
+192.168.11.4 - - [18/Feb/2026 07:13:15] "GET / HTTP/1.1" 200 -
+OCR Lock acquisition timed out.
+Quota popup detection failed: 'text'
+192.168.11.4 - - [18/Feb/2026 07:13:28] "GET /api/quota HTTP/1.1" 200 -
