@@ -1,0 +1,5 @@
+### [SANDBOX_EXAMPLE] ###
+MISSION: Experiment safely within the designated sandbox environment.
+RULES: Operate strictly within /home/user/BANE_CORE/antigravity/AI_SKILLS_SANDBOX. No access to Core.
+SCOPE_FOLDER: /home/user/BANE_CORE/antigravity/AI_SKILLS_SANDBOX
+SECURITY: ISOLATED: All actions must be contained. No system-wide changes.

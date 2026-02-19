@@ -1,0 +1,27 @@
+[Unit]
+Description=B.A.N.E. Dashboard Monitor Server
+After=network-online.target bane.service
+Wants=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=10
+
+[Service]
+Type=simple
+User=son
+Group=son
+WorkingDirectory=/home/user/BANE_CORE/dashboard
+
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONPATH=/home/user/BANE_CORE
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/son/.Xauthority
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+
+ExecStart=/home/user/BANE_CORE/.venv/bin/python3 /home/user/BANE_CORE/dashboard/monitor_server.py
+
+# Restart logic
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

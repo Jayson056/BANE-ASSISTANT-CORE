@@ -1,0 +1,7 @@
+# Allow user 'son' to restart/status Antigravity without password
+# This is required for CLAWBOLT to manage the AI process via system commands (if implemented via systemctl later)
+# Or for future expansions. Currently /restart uses pkill/wmctrl which don't need sudo as user owns the process.
+# But system restart needs sudo, and we prompt for password or need NOPASSWD if desired.
+# The documentation suggests this file for specific commands.
+
+son ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart antigravity, /usr/bin/systemctl status antigravity, /usr/sbin/reboot, /usr/bin/gnome-session-quit

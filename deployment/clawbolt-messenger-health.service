@@ -1,0 +1,18 @@
+[Unit]
+Description=CLAWBOLT Messenger Health Monitor
+After=clawbolt-messenger.service
+Requires=clawbolt-messenger.service
+
+[Service]
+Type=simple
+User=son
+WorkingDirectory=/home/son/CLAWBOLT
+ExecStart=/home/son/CLAWBOLT/.venv/bin/python3 /home/son/CLAWBOLT/deployment/messenger_health.py
+
+Restart=always
+RestartSec=10
+
+Environment="PYTHONUNBUFFERED=1"
+
+[Install]
+WantedBy=multi-user.target

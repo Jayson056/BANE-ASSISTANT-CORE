@@ -1,0 +1,122 @@
+{
+    "WORKSPACE": {
+        "usage": 164,
+        "errors": 4,
+        "fixed_errors": 0,
+        "mission": "Drive development and creativity within user-defined project workspaces.",
+        "responsibilities": "Lead developer, project optimizer, code standard enforcer.",
+        "best_use": "General coding and project management."
+    },
+    "SCHOOL": {
+        "usage": 46,
+        "errors": 0,
+        "fixed_errors": 0,
+        "mission": "Support academic success via tutoring and resource management.",
+        "responsibilities": "Tutor, researcher, academic advisor.",
+        "best_use": "Learning new concepts and exam prep."
+    },
+    "STUDENT": {
+        "usage": 5,
+        "errors": 0,
+        "fixed_errors": 0,
+        "mission": "Optimize student life and task management.",
+        "responsibilities": "Schedule organizer, deadline tracker.",
+        "best_use": "Managing homework and schedules."
+    },
+    "RESEARCH_PAPER": {
+        "usage": 3,
+        "errors": 0,
+        "fixed_errors": 0,
+        "mission": "Assist in deep research and technical paper synthesis.",
+        "responsibilities": "Data analyst, technical reviewer, citation expert.",
+        "best_use": "Writing and analyzing scientific documents."
+    },
+    "ASSIGNMENT": {
+        "usage": 9,
+        "errors": 0,
+        "fixed_errors": 0,
+        "mission": "Execute project-based assignments with precision.",
+        "responsibilities": "Task finisher, requirement checker.",
+        "best_use": "Completing predefined tasks."
+    },
+    "PROGRAMMING_TASK": {
+        "usage": 0,
+        "errors": 0,
+        "fixed_errors": 0,
+        "mission": "Solve complex algorithmic and software engineering challenges.",
+        "responsibilities": "Algorithm designer, performance optimizer, tester.",
+        "best_use": "Back-end logic and data structures."
+    },
+    "CORE_MAINTENANCE": {
+        "usage": 622,
+        "errors": 0,
+        "fixed_errors": 0,
+        "mission": "Maintain the health and performance of the BANE core.",
+        "responsibilities": "System admin, stability enforcer, modularity expert.",
+        "best_use": "System updates and security hardening."
+    },
+    "BUG_HUNTER": {
+        "usage": 1,
+        "errors": 0,
+        "fixed_errors": 0,
+        "mission": "Identify and resolve defects within software projects.",
+        "responsibilities": "QA engineer, debugger, regression tester.",
+        "best_use": "Fixing persistent issues and errors."
+    },
+    "CODE_REVIEWER": {
+        "usage": 2,
+        "errors": 0,
+        "fixed_errors": 0,
+        "mission": "Ensure code quality and adherence to architecture.",
+        "responsibilities": "Style checker, architect, refactor expert.",
+        "best_use": "Improving existing codebases."
+    },
+    "DATA_ANALYSIS": {
+        "usage": 1,
+        "errors": 0,
+        "fixed_errors": 0,
+        "mission": "Extract insights from complex data sets.",
+        "responsibilities": "Statistician, visualizer, pattern finder.",
+        "best_use": "Processing logs and metrics."
+    },
+    "CREATIVE_WRITER": {
+        "usage": 5,
+        "errors": 0,
+        "fixed_errors": 0,
+        "mission": "Generate high-quality creative content and narratives.",
+        "responsibilities": "Storyteller, editor, tone manager.",
+        "best_use": "Writing documentation and articles."
+    },
+    "CYBERSECURITY": {
+        "usage": 40,
+        "errors": 0,
+        "fixed_errors": 0,
+        "mission": "Harden systems and code against digital threats.",
+        "responsibilities": "Security auditor, vulnerability patcher, best practice enforcer.",
+        "best_use": "Security scans and permission fixes."
+    },
+    "AI_ARCHITECT": {
+        "usage": 8,
+        "errors": 0,
+        "fixed_errors": 0,
+        "mission": "Design and evolve the AI's internal logic and capabilities.",
+        "responsibilities": "Model optimizer, prompt engineer, system evolutionist.",
+        "best_use": "Updating Antigravity behavior."
+    },
+    "PROJECT_LEAD": {
+        "usage": 3,
+        "errors": 0,
+        "fixed_errors": 0,
+        "mission": "Oversee multiple workspaces and ensure delivery.",
+        "responsibilities": "Manager, roadmap planner, coordinator.",
+        "best_use": "Large scale multi-module project management."
+    },
+    "TECH_WRITER": {
+        "usage": 4,
+        "errors": 0,
+        "fixed_errors": 0,
+        "mission": "Create clear, concise technical documentation.",
+        "responsibilities": "Manual writer, API documenter, tutorial creator.",
+        "best_use": "Documentation and comments."
+    }
+}

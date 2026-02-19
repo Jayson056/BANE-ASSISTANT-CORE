@@ -1,0 +1,25 @@
+[Unit]
+Description=CLAWBOLT Control Agent
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=clawbolt
+WorkingDirectory=/home/son/CLAWBOLT
+
+# Use the virtual environment Python
+ExecStart=/home/son/CLAWBOLT/.venv/bin/python3 /home/son/CLAWBOLT/main.py
+
+# Restart on failure/crash
+Restart=always
+RestartSec=5
+
+# Backend runs headless - no GUI dependencies needed at this layer
+Environment="PYTHONUNBUFFERED=1"
+Environment="DISPLAY=:0"
+Environment="XAUTHORITY=/home/son/.Xauthority"
+Environment="XDG_RUNTIME_DIR=/run/user/1000"
+
+[Install]
+WantedBy=multi-user.target

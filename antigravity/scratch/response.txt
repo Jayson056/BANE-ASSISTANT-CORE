@@ -1,0 +1,12 @@
+✅ **Core Protocol Fixed: Dual-Channel Delivery Restored**
+
+I apologize for the missing text! There was a technical bug in my **Telegram Bridge** script (an attribute error and a logic flaw in handling media vs text) that caused the text portion of my responses to fail, leaving only the voice message.
+
+I have just performed a **hotfix** on the core system:
+1. **Crash Fix**: Resolved the 'title attribute' error in `send_telegram.py`.
+2. **Unified Messaging**: Enabled 'Caption' support. I can now send your text and voice/document in a single, unified message bubble.
+3. **Premium Headers**: Restored for all media types.
+
+To answer your previous question (*"Tulog nyo nayan!"*): It translates to **"Go to sleep already!"** or **"You guys should sleep now!"** in English.
+
+Thanks for catching that—system integrity is now fully restored. 🚀🛰️

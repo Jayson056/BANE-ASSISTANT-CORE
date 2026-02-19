@@ -1,0 +1,19 @@
+# BANE Git Ignore
+.venv/
+__pycache__/
+*.pyc
+Debug/
+storage/recordings/
+storage/screenshots/
+storage/speech.mp3
+
+# Secrets — NEVER commit
+config/secrets.env
+*.env
+
+# Logs
+*.log
+storage/*.json
+
+# Dedicated projects workspace (Isolated from main BANE)
+Projects/

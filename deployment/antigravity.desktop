@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Antigravity AI
+Exec=/usr/bin/antigravity
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Comment=Auto-launch Antigravity AI for CLAWBOLT

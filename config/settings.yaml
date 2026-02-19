@@ -1,0 +1,20 @@
+# CLAWBOLT Settings
+
+telegram:
+  update_interval: 1.0  # Polling interval in seconds
+  allowed_users: []     # List of allowed Telegram User IDs (integer)
+
+agent:
+  screenshot_quality: 80
+  default_watch_duration: 30
+  max_watch_duration: 300
+
+storage:
+  screenshots_dir: "storage/screenshots"
+  recordings_dir: "storage/recordings"
+  logs_dir: "storage/logs"
+  states_dir: "storage/states"
+
+antigravity:
+  process_name: "Antigravity"  # Process name to monitor
+  input_box_keywords: ["Ask anything", "Type your question"]
