@@ -1853,6 +1853,7 @@
 
             chatMessages.innerHTML = history.map(msg => {
                 let content = escapeHtml(msg.text);
+                const roleLabel = (msg.role === 'user') ? '👤 User' : '🦅 BANE Agent';
 
                 // Voice Message Detection & Player
                 if (msg.text && msg.text.includes('[VOICE_MESSAGE]:')) {
@@ -1876,7 +1877,10 @@
 
                 return `
                 <div class="chat-msg ${msg.role}">
-                    <div class="msg-bubble">${content}</div>
+                    <div class="msg-wrapper">
+                        <div class="msg-label">${roleLabel}</div>
+                        <div class="msg-bubble">${content}</div>
+                    </div>
                 </div>
             `}).join('');
 
