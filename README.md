@@ -117,27 +117,7 @@ sudo systemctl start bane
 
 ---
 
-## ☁️ Deployment (Cloud/Render)
 
-While BANE Core runs locally, the **BANE Official Website** and **Dashboard Viewers** can be deployed to the cloud (e.g., Render, Railway).
-
-**Structure**:
-- `deployment/site/` contains the Django-based BANE Official Website.
-- `bane_site.py` is the WSGI entry point for Render.
-
-**Deploy to Render**:
-1.  Connect your Repo to Render.
-2.  **Root Directory**: `BANE-Deployment` (or repo root).
-3.  **Build Command**:
-    ```bash
-    pip install -r Requirements-BANE-site.txt && python deployment/site/manage.py collectstatic --noinput
-    ```
-4.  **Start Command**:
-    ```bash
-    gunicorn bane_site:application
-    ```
-
----
 
 ## 📊 Features & Modules
 
